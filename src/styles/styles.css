@@ -1,0 +1,1251 @@
+
+
+
+body {
+  background-color: #fff;
+  font-size: 14px;
+}
+.ContainerDefault {
+  min-height: 90vh;
+  display: flex;
+  padding: 10px 0px;
+  align-items: cent
+  er;
+  flex-direction: column;  
+}
+
+.ContainerDefaultH {
+  width: 100%;
+  background: url('../../public/assets/bg_RH2.jpg') center no-repeat;
+  background-size: cover;
+  min-height: 90vh;
+  display: flex;
+  padding: 10px 0px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  position: relative; 
+}
+
+.ContainerDefaultH::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(1, 1, 34, 0.836); /* Cor com transparência */
+  z-index: -999; 
+}
+
+.ContainerDefaultUser {
+  width: 100%;
+  background: url('../../public/assets/bg_USER2.jpg') bottom no-repeat;
+  background-size: cover;
+  min-height: 90vh;
+  display: flex;
+  padding: 10px 0px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  position: relative; 
+}
+
+.ContainerDefaultUser::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(1, 1, 34, 0.836); /* Cor com transparência */
+  z-index: -999; 
+}
+
+
+.ContainerDefaultRh {
+  width: 100%;
+  background: url('../../public/assets/bg_RH3.jpg') center no-repeat;
+  background-size: cover;
+  min-height: 90vh;
+  display: flex;
+  padding: 10px 0px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  position: relative; 
+}
+
+.ContainerDefaultRh::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(1, 1, 34, 0.623); /* Cor com transparência */
+  z-index: -999; 
+}
+
+
+.ContentApp {
+  width: 100%;
+  padding: 0 30px;
+}
+
+.ContentForm {
+  width: 100%;
+  display: flex;
+  padding: 30px 30px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.StepsUser {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: flex-end;
+  
+}
+
+.StepsUser img {
+  width: 100%;
+  height: auto;
+  max-width: 80vh;
+}
+
+
+.StepsContent1 {
+  position: static;
+  margin-top: 2%;
+  margin-left: 1%;
+  padding: 0px 0px 0px 0px;
+}
+
+.StepsContent1 h2 {
+  color: #0015a2;
+}
+
+
+.StepsContent2 {
+  position: static;
+  margin-top: 16%;
+  margin-left: 1%;
+  padding: 0px 30px 0px 0px;
+}
+
+.StepsContent2 h2 {
+  color: #00aae1;
+}
+
+.StepsContent3 {
+  position: static;
+  margin-top: 29%;
+  margin-left: 1%;
+  padding: 0px 30px 0px 0px;
+}
+
+.StepsContent3 h2 {
+  color: #00d6e1;
+}
+
+.StepsContent4 {
+  position: static;
+  margin-top: 45%;
+  margin-left: 1%;
+  padding: 0px 30px 0px 0px;
+}
+
+.StepsContent4 h2 {
+  color: #00d1aa;
+}
+
+.DocUpdate {
+  margin: 15px 0px 0px 0px;
+
+}
+
+.MonthInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.FilterDash{
+gap: 10px;
+align-items: center;
+  display: flex;
+}
+
+.ContainerApp {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ContainerFooter {
+  color: #e7e7e7;
+  width: 100%;
+  background-color: #000E85;
+  padding: 20px 30px;
+ font-size: 12px;
+}
+
+.SocialIcons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.SocialIcons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.SocialIcons a {
+  padding: 5px;
+  color: #000000;
+ 
+}
+
+.ContainerFooter p {
+  text-align: center;
+ 
+}
+
+.ContainerApp100column {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  
+}
+
+.ContainerApp100T {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+ 
+  justify-content: center;
+  margin: 0% 0;
+
+}
+
+.ContainerApp100 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+  min-height: 90vh;
+}
+
+.ContainerApp50 {
+  width: 50%;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.ContainerApp40 {
+  width: 40%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 55px;
+}
+
+.ContainerApp70 {
+  width: 80%;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+
+}
+ 
+.ContainerGrid {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.ContainerNav {
+  width: 100%;
+  background-color: #000E85;
+  padding: 0px 5px;
+}
+
+.NavItems {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.NavItems a{
+text-decoration: none;
+color: #fff;
+padding-left: 30px;
+}
+
+.NavItems a:hover{
+  text-decoration: none;
+  color: #ffffff9a;
+  padding-left: 30px;
+  }
+
+.navLogo {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+}
+
+
+.navIcon {
+  width: 100%;
+  max-width: 70px;
+  height: auto;
+}
+
+.SearchRh {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.FormRh {
+  text-transform: uppercase;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.FormRh input {
+  text-transform: uppercase;
+ 
+}
+
+.btnD{
+  color: #fff;
+  background-color: #0015A2;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+}
+
+.IdList{
+  width:50px;
+  padding:10px;
+  border-right: 1px solid #cdcdcd;
+  border-radius: 7px;
+  text-align: center;
+
+}
+
+.LabelList .IdList {
+  display: flex;
+  align-items: center;
+  padding: 5px 15px;
+  border-right: 1px solid #cdcdcd;
+  width: 50px;
+  font-size: 12px;
+  height: auto;
+}
+
+.ListFlex {
+  display: flex;
+  background: #fff; 
+  border-radius: 7px;
+  box-shadow: #00000038 2px 4px 16px 0px;
+  margin: 8px 0px 0px 0px;
+}
+
+.LabelList  .ListFlex{
+  display: flex;
+  background: #fff;  
+  border-radius: 7px;
+
+}
+
+.LabelList .ListGrid {
+  display: flex;
+  align-items: center;
+  padding: 0px 5px;
+  border-right: 1px solid #cdcdcd;
+  width: 200px;
+  font-size: 12px;
+  height: auto;
+  white-space: nowrap;
+    overflow: hidden;
+}
+
+.ListGrid {
+  display: flex;
+  align-items: center;
+  padding: 10px 5px;
+  border-right: 1px solid #cdcdcd;
+  width: 200px;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.ListGrid a{
+
+  padding-right: 3px;
+}
+
+.SelectDoc {
+  display: flex;
+  border: 1px solid #0c066d;
+  border-radius: 3px;
+  gap: 15px;
+  width: 250px;
+  padding: 10px 15px;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  background: #fff;
+  box-shadow: #00000036 1px 2px 3px 0px;
+}
+
+.SelectDoc:hover {
+
+  border: 1px solid #170cd6; 
+  box-shadow: #00000021 1px 5px 5px 0px;
+}
+
+
+.DocSelect {
+  display: flex;
+  margin: 20px 0;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.btnMenu {
+  width: 150px;
+  color: #fff;
+  background-color: #0015A2;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  margin: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn100 {
+  width: 100%;
+  color: #fff;
+  background-color: #0015A2;
+  padding: 15px 0;
+  border: none;
+  border-radius: 5px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn100:hover {
+  background-color: #6f8ceb;
+}
+
+.btnMenu:hover {
+  background-color: #6f8ceb;
+}
+
+.textCenter {
+   padding: 20px;
+  text-align: center;
+  max-width: 600px;
+}
+
+.textCenter {
+  padding: 5px;
+ text-align: center;
+ color: #fff;
+ text-shadow: #00000046 2px 2px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+.InputArea {
+  display: flex;
+  flex-direction: column;
+}
+
+.FormContainer {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  flex-wrap: wrap;
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 0px 0px 5px #ccc;
+  border-radius: 5px;
+}
+
+.FormContainer input{
+
+width: 100%;
+
+
+}
+
+select {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0 10px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  height: 40px;
+}
+
+input {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0 10px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  height: 40px;
+}
+
+.containerLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5% 0;
+  padding: 15px;
+}
+
+.menucontainer1 {
+  display: flex;
+  gap: 30px;
+  margin-top: 50px;
+  width: 50%;
+  height: auto;
+  justify-content: center;
+
+}
+
+.menuSideContainer {
+  padding: 20px 30px;
+  display: flex;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 20%;
+  min-height: 100vh;
+  justify-items: center;
+  flex-direction: column;
+  background-color: #0015A2;
+  justify-content: flex-start;
+  color: #fff;
+}
+
+.menuGridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+  width: 50%;
+  height: auto;
+  justify-items: center;
+  justify-content: center;
+}
+
+.menu-itemT {
+  display: flex;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  background-color: #000c73;
+  border: 1px solid #0015A2;
+  border-radius: 5px;
+  flex-direction: row;
+  transition: background-color 0.3s;
+  justify-content: flex-start;
+  align-items: center;
+  &:hover {
+    background-color: #000c739d;
+    color: #d4d4d4;
+  }
+}
+
+
+.menu-item {
+  display: flex;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  width: 120px;
+  height: 120px;
+  padding: 10px;
+  background-color: #000c73;
+  border: 1px solid #0015A2;
+  border-radius: 5px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: #000c73;
+    color: #d4d4d4;
+  }
+}
+
+
+.menu-itemT img{
+
+  width: 5%;
+  margin-right: 10px;
+  
+  }
+
+.menu-item img{
+
+width: 15%;
+
+
+}
+
+.menu-item p {
+  margin-top: 10px;
+}
+
+.UserData {
+  max-width: 100%;
+
+}
+
+.UserDataForm {
+  display: grid;
+  gap: 16px;
+}
+
+.UserDataForm label {
+  display: grid;
+  gap: 8px;
+}
+
+.UserDataForm input {
+  padding: 8px;
+  width: 100%;
+  height: 45px;
+  box-sizing: border-box;
+}
+
+.UserDataForm button {
+width: 100%;
+color: #fff;
+background-color: #0015A2;
+padding: 15px 0;
+border: none;
+border-radius: 150px;
+margin: 10px 0;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+.voltar {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.DocUpdate input {
+  display: flex;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  border-radius: 5px;
+  height: 80px;
+  width: 100%;
+}
+
+.EnvUpdate{
+  margin: 10px 0;
+  height: 50px;
+  width: 100%;
+}
+
+.image-preview {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  max-width: 800px;
+  flex-wrap: wrap;
+}
+
+.image-preview img {
+  display: flex;
+  width: 150px;
+  height: auto;
+  border: 4px solid #cdcdcd;
+}
+
+.AlertUp {
+  background: yellow;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+.custom-file-upload {
+  position: relative;
+  height: auto;
+  width: 100%;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  border-radius: 5px;
+  background-color: #eee; /* Adicione estilos conforme necessário */
+}
+
+.custom-file-upload::before {
+  content: ''; /* Adicione o texto desejado aqui */
+}
+
+.custom-file-upload input[type="file"] {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ImageGallery img {
+  cursor: pointer;
+  width: 180px;
+  height: auto;
+}
+
+.DocPen{
+  background-color: rgb(255, 48, 11);
+  padding: 10px;
+  color: #fff;
+}
+
+.DocEnv{
+padding: 10px;
+background-color: rgb(255, 230, 0);
+}
+
+.alertGreen{
+  border-radius: 5px;
+  margin: 10px 0;
+
+  background-color: rgb(0, 240, 120);
+  padding: 10px 15px;
+  color: #fff;
+}
+
+.alertRed{
+  border-radius: 5px;
+  margin: 10px 0;
+  background-color: rgb(255, 48, 11);
+  padding: 10px 15px;
+  color: #fff;
+}
+
+.ImageGallery {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+  gap: 10px;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.ImageGalleryItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.Lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Lightbox img {
+  width: 100%;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.CloseButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.DashStyled {
+  width: 90%;
+  padding: 20px 0;
+  border-radius: 5px;
+}
+
+.DashStyled canvas{
+ padding: 20px;
+ margin: 15px 0;
+  box-shadow: #00000036 3px 4px 20px 2px;
+
+}
+
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+
+.modalOpenImage {
+  background-color: white;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+}
+
+.modalOpenImage img {
+  width: 100%;
+  height: auto;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button.ViewBtnList {
+  border-radius: 100px;
+  padding: 5px;
+  color: #fff;
+  background: #0015A2;
+  border: none;
+  font-size: 10px;
+}
+
+.ViewBtnList:hover {
+  border-radius: 100px;
+  padding: 5px;
+  color: #ffffff98;
+  background: #405391;
+  border: none;
+  font-size: 10px;
+}
+
+
+.AlertStatusRed {
+  width: 100%;
+  text-align: center;
+  background: red;
+  color: #fff;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.AlertStatusYellow {
+  width: 100%;
+  text-align: center;
+  background: yellow;
+  color: #000;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.AlertStatusOrange {
+  width: 100%;
+  text-align: center;
+  background: rgb(255, 123, 0);
+  color: #fff;
+  padding: 5px;
+  font-size: 12px;
+}
+
+
+.AlertStatusGreen {
+  width: 100%;
+  text-align: center;
+  background: rgb(80, 202, 80);
+  color: #fff;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.menuSideContainer {
+  position: relative;
+}
+
+
+.hamburger {
+
+  display: none;
+ 
+}
+
+
+.btnCsv {
+  background: #0c066d;
+  text-align: center;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+
+/* Adicione media queries para tornar o layout responsivo */
+@media screen and (max-width: 1024px) {
+
+
+
+  .SelectDoc {
+    display: flex;
+    border: 1px solid #0c066d;
+    border-radius: 3px;
+    gap: 15px;
+    width: 100%;
+    padding: 10px 15px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    background: #fff;
+    box-shadow: #00000036 1px 2px 3px 0px;
+}
+
+  .menuSideContainer .navLogo {
+width: 50%;
+padding: 10px;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  padding: 20px;
+  height: 100vh;
+  background: #0015A2;
+
+  transition: left 0.3s ease;
+  z-index: 999;
+}
+
+.sidebar.open {
+  left: 0; /* Quando a classe open é adicionada, o menu é movido para a tela */
+  box-shadow: #000 2px 0px 17px 0px;
+}
+
+
+.CloseButton {
+  position: absolute;
+  top: 100px;
+  right: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+  .modalOpenImage {
+    background-color: white;
+    margin: 25% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+}
+
+ .LabelList{
+
+
+display: none;
+
+  }
+
+  .IdList {
+    width: 100%;
+    padding: 10px;
+     border: 0px solid #cdcdcd;
+    border-radius: 7px;
+    text-align: center;
+
+}
+
+.ListGrid {
+  display: flex;
+  align-items: center;
+  padding: 10px 5px;
+  width: 100%;
+  font-size: 14px;
+  justify-content: center;
+  border-right: 0px solid #cdcdcd;
+}
+
+.ListFlex {
+  width: 100%;
+  display: flex;
+  background: #fff;
+  border: 2px solid #cdcdcd;
+  border-radius: 7px;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.ContainerDefault {
+  min-height: 50vh;
+  display: flex; 
+  width: 100%;
+  padding: 20px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+  .ContainerApp100 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    justify-content: center;
+    margin: 5% 0;
+    flex-direction: column;
+    padding: 0 15px;
+}
+
+.ContainerApp100T {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  margin: 0% 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ContainerApp80 {
+  width: 100%;
+  min-height: auto;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+}
+
+  .ContainerApp40 {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.MonthInput {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.DashStyled {
+  width: 100%;
+  background: rgb(249, 249, 249);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.InputArea {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.menuSideContainer {
+  padding: 0px 0px;
+  display: flex;
+  gap: 0px;
+  width: 100%;
+  min-height: auto;
+  justify-items: center;
+  background: #0015A2;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+
+}
+
+.menuGridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  width: 100%;
+  height: auto;
+  justify-items: center;
+  justify-content: center;
+}
+
+.FormContainer {
+    max-width: 1280px;
+    display: flex;
+    gap: 15px;
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0px 0px 5px #ccc;
+    border-radius: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.voltar {
+  position: absolute;
+  right: 30px;
+  top: 15px;
+  color: #fff;
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+h1 {
+  font-size: 1.4em;
+}
+
+
+.ContentApp {
+  width: 100%;
+  padding: 20px 10px;
+}
+
+
+
+
+
+.StepsContent1, .StepsContent2, .StepsContent3, .StepsContent4  {
+
+  position: relative;
+  left: 0;
+  top: 0;
+  margin-top: 0px;
+  
+  }
+
+  .StepsUser {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ContainerApp70 {
+  width: 100%;
+  min-height: auto;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column-reverse;
+  gap: 20px;
+}
+
+
+}
+
+@media screen and (min-width: 720px) {
+  .UserDataForm {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .UserDataForm label {
+    grid-column: span 2;
+  }
+}
