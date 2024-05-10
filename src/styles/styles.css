@@ -4,6 +4,9 @@
 body {
   background-color: #fff;
   font-size: 14px;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 .ContainerDefault {
   min-height: 90vh;
@@ -35,7 +38,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(1, 1, 34, 0.836); /* Cor com transparência */
+  background-color: rgba(23, 0, 43, 0.959); /* Cor com transparência */
   z-index: -999; 
 }
 
@@ -60,7 +63,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(1, 1, 34, 0.836); /* Cor com transparência */
+  background-color: rgba(23, 0, 43, 0.959); /* Cor com transparência */
   z-index: -999; 
 }
 
@@ -86,7 +89,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(1, 1, 34, 0.623); /* Cor com transparência */
+  background-color: rgba(23, 0, 43, 0.959);/* Cor com transparência */
   z-index: -999; 
 }
 
@@ -127,7 +130,7 @@ body {
 }
 
 .StepsContent1 h2 {
-  color: #0015a2;
+  color: #633687;
 }
 
 
@@ -318,8 +321,10 @@ padding-left: 30px;
 
 .navLogo {
   width: 100%;
-  max-width: 350px;
+  max-width: 180px;
+  padding: 10px 15px;
   height: auto;
+
 }
 
 
@@ -350,7 +355,7 @@ padding-left: 30px;
 
 .btnD{
   color: #fff;
-  background-color: #0015A2;
+  background-color: #633687;
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
@@ -370,13 +375,11 @@ padding-left: 30px;
 }
 
 .LabelList .IdList {
-  display: flex;
-  align-items: center;
-  padding: 5px 15px;
+  width:50px;
+  padding:10px;
   border-right: 1px solid #cdcdcd;
-  width: 50px;
-  font-size: 12px;
-  height: auto;
+  border-radius: 7px;
+  text-align: center;
 }
 
 .ListFlex {
@@ -399,7 +402,7 @@ padding-left: 30px;
   align-items: center;
   padding: 0px 5px;
   border-right: 1px solid #cdcdcd;
-  width: 200px;
+  width: 240px;
   font-size: 12px;
   height: auto;
   white-space: nowrap;
@@ -411,16 +414,22 @@ padding-left: 30px;
   align-items: center;
   padding: 10px 5px;
   border-right: 1px solid #cdcdcd;
-  width: 200px;
-  font-size: 14px;
+  width: 240px;
+  font-size: 12px;
   white-space: nowrap;
   overflow: hidden;
   justify-content: center;
 }
 
-.ListGrid a{
-
-  padding-right: 3px;
+.ListGridMail {
+  display: flex;
+  padding: 10px 5px;
+  border-right: 1px solid #cdcdcd;
+  width: 240px;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: auto;
+  justify-content: flex-start;
 }
 
 .SelectDoc {
@@ -439,7 +448,7 @@ padding-left: 30px;
 
 .SelectDoc:hover {
 
-  border: 1px solid #170cd6; 
+  opacity: 0.7;
   box-shadow: #00000021 1px 5px 5px 0px;
 }
 
@@ -455,7 +464,7 @@ padding-left: 30px;
 .btnMenu {
   width: 150px;
   color: #fff;
-  background-color: #0015A2;
+  background-color: #633687;
   padding: 15px;
   border: none;
   border-radius: 5px;
@@ -467,7 +476,7 @@ padding-left: 30px;
 .btn100 {
   width: 100%;
   color: #fff;
-  background-color: #0015A2;
+  background-color: #633687;
   padding: 15px 0;
   border: none;
   border-radius: 5px;
@@ -477,11 +486,11 @@ padding-left: 30px;
 }
 
 .btn100:hover {
-  background-color: #6f8ceb;
+  opacity: 0.7;
 }
 
 .btnMenu:hover {
-  background-color: #6f8ceb;
+  opacity: 0.7;
 }
 
 .textCenter {
@@ -580,7 +589,7 @@ input {
   min-height: 100vh;
   justify-items: center;
   flex-direction: column;
-  background-color: #0015A2;
+  background-color: #633687;
   justify-content: flex-start;
   color: #fff;
 }
@@ -605,14 +614,14 @@ input {
   height: auto;
   padding: 10px;
   background-color: #000c73;
-  border: 1px solid #0015A2;
+  border: 1px solid #633687;
   border-radius: 5px;
   flex-direction: row;
   transition: background-color 0.3s;
   justify-content: flex-start;
   align-items: center;
   &:hover {
-    background-color: #000c739d;
+    opacity: 0.7;
     color: #d4d4d4;
   }
 }
@@ -627,14 +636,14 @@ input {
   height: 120px;
   padding: 10px;
   background-color: #000c73;
-  border: 1px solid #0015A2;
+  border: 1px solid #633687;
   border-radius: 5px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: background-color 0.3s;
   &:hover {
-    background-color: #000c73;
+    opacity: 0.7;
     color: #d4d4d4;
   }
 }
@@ -664,18 +673,20 @@ width: 15%;
 }
 
 .UserDataForm {
-  display: grid;
+  display: flex;
   gap: 16px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
 }
-
 .UserDataForm label {
   display: grid;
   gap: 8px;
 }
 
-.UserDataForm input {
+.UserDataForm input, select {
   padding: 8px;
-  width: 100%;
+  width: 160px;
   height: 45px;
   box-sizing: border-box;
 }
@@ -683,7 +694,7 @@ width: 15%;
 .UserDataForm button {
 width: 100%;
 color: #fff;
-background-color: #0015A2;
+background-color: #633687;
 padding: 15px 0;
 border: none;
 border-radius: 150px;
@@ -731,6 +742,7 @@ transition: background-color 0.3s;
 }
 
 .AlertUp {
+  width: 100%;
   background: yellow;
   padding: 15px;
   margin: 10px 0;
@@ -739,12 +751,12 @@ transition: background-color 0.3s;
 .custom-file-upload {
   position: relative;
   height: auto;
-  width: 100%;
+  min-height: 80px;
+  width: 97.8%;
   display: inline-block;
-  padding: 6px 12px;
+  padding: 20px 15px;
   cursor: pointer;
-  padding: 10px;
-  border: 2px dashed #bbb;
+   border: 3px dashed #bbb;
   border-radius: 5px;
   background-color: #eee; /* Adicione estilos conforme necessário */
 }
@@ -756,13 +768,14 @@ transition: background-color 0.3s;
 .custom-file-upload input[type="file"] {
   opacity: 0;
   position: absolute;
+  width: 0;
   top: 0;
   left: 0;
 }
 
 .ImageGallery img {
   cursor: pointer;
-  width: 180px;
+  width: 280px;
   height: auto;
 }
 
@@ -795,14 +808,14 @@ background-color: rgb(255, 230, 0);
 }
 
 .ImageGallery {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-content: center;
-  gap: 10px;
-  align-items: center;
-  padding: 20px;
-  justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    gap: 10px;
+    align-items: center;
+    padding: 20px;
+    justify-content: center;
 }
 
 .ImageGalleryItem {
@@ -822,18 +835,19 @@ background-color: rgb(255, 230, 0);
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 999;
 }
 
 .Lightbox img {
   width: 100%;
-  max-width: 80%;
-  max-height: 80%;
+  max-width: 60%;
+  max-height: 60%;
 }
 
 .CloseButton {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 120px;
+  right: 300px;
   color: #fff;
   cursor: pointer;
 }
@@ -864,10 +878,12 @@ background-color: rgb(255, 230, 0);
 
 .modal-content {
   background-color: white;
-  margin: 10% auto;
+  margin: 8% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 70%;
+  max-height: 70vh;
+  overflow-y: auto;
 }
 
 
@@ -902,18 +918,13 @@ button.ViewBtnList {
   border-radius: 100px;
   padding: 5px;
   color: #fff;
-  background: #0015A2;
+  background: #633687;
   border: none;
   font-size: 10px;
 }
 
 .ViewBtnList:hover {
-  border-radius: 100px;
-  padding: 5px;
-  color: #ffffff98;
-  background: #405391;
-  border: none;
-  font-size: 10px;
+ opacity: 0.7;
 }
 
 
@@ -978,7 +989,18 @@ button.ViewBtnList {
 /* Adicione media queries para tornar o layout responsivo */
 @media screen and (max-width: 1024px) {
 
-
+  .custom-file-upload {
+    position: relative;
+    height: auto;
+    min-height: 80px;
+    width: 87.8%;
+    display: inline-block;
+    padding: 20px 15px;
+    cursor: pointer;
+    border: 3px dashed #bbb;
+    border-radius: 5px;
+    background-color: #eee;
+}
 
   .SelectDoc {
     display: flex;
@@ -1015,7 +1037,7 @@ padding: 10px;
   width: 250px;
   padding: 20px;
   height: 100vh;
-  background: #0015A2;
+  background: #633687;
 
   transition: left 0.3s ease;
   z-index: 999;
@@ -1029,8 +1051,8 @@ padding: 10px;
 
 .CloseButton {
   position: absolute;
-  top: 100px;
-  right: 10px;
+  top: 120px;
+  right: 50px;
   color: #fff;
   cursor: pointer;
 }
@@ -1062,11 +1084,22 @@ display: none;
 .ListGrid {
   display: flex;
   align-items: center;
-  padding: 10px 5px;
+  padding: 10px 0px;
   width: 100%;
   font-size: 14px;
   justify-content: center;
   border-right: 0px solid #cdcdcd;
+}
+
+.ListGridMail {
+  display: flex;
+  padding: 10px 5px;
+  border-right: 1px solid #cdcdcd;
+  width: 100%;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  justify-content: center;
 }
 
 .ListFlex {
@@ -1076,6 +1109,7 @@ display: none;
   border: 2px solid #cdcdcd;
   border-radius: 7px;
   flex-direction: column;
+  align-items: center;
   margin: 10px 0;
 }
 
@@ -1083,7 +1117,7 @@ display: none;
   min-height: 50vh;
   display: flex; 
   width: 100%;
-  padding: 20px;
+  padding: 0px;
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -1154,7 +1188,7 @@ display: none;
   width: 100%;
   min-height: auto;
   justify-items: center;
-  background: #0015A2;
+  background: #633687;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;

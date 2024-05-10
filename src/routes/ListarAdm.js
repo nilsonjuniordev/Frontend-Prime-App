@@ -21,7 +21,7 @@ const ListarAdm = () => {
     // Fazer uma solicitação ao servidor para buscar os detalhes do usuário atual
     const fetchCurrentUser = async () => {
       try {
-        const result = await axios.get(`https://191.184.72.124:8800/${userId}`);
+        const result = await axios.get(`/api/${userId}`);
         setCurrentUser(result.data);
       } catch (error) {
         console.error("Erro ao buscar detalhes do usuário:", error);
@@ -35,7 +35,7 @@ const ListarAdm = () => {
     // Fazer uma solicitação ao servidor para buscar todos os usuários
     const fetchAllUsers = async () => {
       try {
-        const result = await axios.get("https://191.184.72.124:8800/");
+        const result = await axios.get("/api/");
         setUsers(result.data);
       } catch (error) {
         console.error("Erro ao buscar todos os usuários:", error);
@@ -52,7 +52,7 @@ const ListarAdm = () => {
   const handleDeleteUser = async (userId) => {
     try {
       // Envie uma solicitação DELETE para o servidor para excluir o usuário
-      await axios.delete(`https://191.184.72.124:8800/${userId}`);
+      await axios.delete(`/api/${userId}`);
       // Atualize a lista de usuários após a exclusão
           window.location.reload();
     } catch (error) {

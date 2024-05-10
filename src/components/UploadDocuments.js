@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import { Box, Typography } from "@mui/material";
+import Button from '@mui/material/Button';
 
 const UploadImages = () => {
   const navigate = useNavigate();
@@ -27,7 +29,7 @@ const UploadImages = () => {
         return;
       }
   
-      const response = await axios.get('https://191.184.72.124:8800/');
+      const response = await axios.get('/api/');
       const users = response.data;
   
       // Encontrar o usuário com o userId correspondente
@@ -71,7 +73,7 @@ const UploadImages = () => {
 
     try {
       const response = await axios.post(
-        "https://191.184.72.124:8800/uploads",
+        "/api/uploads",
         formData,
         {
           headers: {
@@ -102,35 +104,46 @@ const UploadImages = () => {
   };
 
   return (
-    <div>
-         <br/> <h3> Documentos solicitados pelo recrutador:</h3>
-     <h4 className="AlertUp">
-      {userDocs.join(', ')}
-        </h4>
-      <div className="DocUpdate">
+    <Box display="flex" justifyContent="center" alignItems="center">
+    <Box sx={{ width: '100%', p: 3 }}>
+    <Typography  variant="h5" sx={{  mb: 2 }}> 
+          Tire fotos nítidas, tanto da frente quanto do verso, de cada um dos
+       documentos solicitados e certifique-se de anexar todos eles.   
+     </Typography> 
+
+
+
+       <Typography variant="h6" component="div" sx={{  mb: 2 }}>  Documentos solicitados pelo recrutador:</Typography> 
+       <Typography sx={{  backgroundColor: 'yellow', p:1, fontSmooth: '2em' }}>  {userDocs.join(', ')}</Typography> 
+      
+       <Box sx={{ width: '100%', mt: 1 }}>
         <label htmlFor="fileInput" className="custom-file-upload">
           <input
             type="file"
             id="fileInput"
             multiple
             onChange={handleFileChange}
-          />{" "}
-          Clique aqui e selecione o documento em seu celular ou computador:
-          <br />
-          <br />
+          />
+          <Typography> Clique aqui e selecione
+             o documento em seu celular ou computador:</Typography> 
+          
         </label>
+
+
         <div className="image-preview">
           {files.map((file, index) => (
             <img key={index} src={URL.createObjectURL(file)} alt="preview" />
           ))}
-        </div>{" "}
+        </div>
         {uploadMessage && <p>{uploadMessage}</p>}
-       
-        <button className="EnvUpdate" onClick={handleUpload}>
-          Enviar Imagens
-        </button>{" "}
-      </div>
-    </div>
+    
+        <Button  variant="contained" onClick={handleUpload} style={{ backgroundColor: '#633687', color: 'white' }}>
+        Enviar Imagens
+        </Button>
+         
+   </Box>
+     
+   </Box> </Box>
   );
 };
 

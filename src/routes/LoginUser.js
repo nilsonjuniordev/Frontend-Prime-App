@@ -11,6 +11,8 @@ const LoginUser = () => (
         </Link>
 
       <div className="textCenter">
+      <img className='navLogo' src="/assets/iboard-logo-sfundo.png" alt='' />
+        <br/>
       <h2>Bem-vindo colaborador! </h2><br/>
 
 

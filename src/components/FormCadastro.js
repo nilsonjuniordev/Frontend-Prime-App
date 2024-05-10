@@ -80,7 +80,7 @@ const FormCadastro = () => {
     // Função para buscar as empresas cadastradas com id_cnpj
     const fetchEmpresas = async () => {
       try {
-        const response = await axios.get("https://191.184.72.124:8800/"); // Altere a URL para a rota correta da sua API
+        const response = await axios.get("/api/"); // Altere a URL para a rota correta da sua API
         const empresasComCNPJ = response.data.filter((empresa) => empresa.cnpj); // Filtra apenas as empresas com id_cnpj
         setEmpresas(empresasComCNPJ); // Define as empresas no estado
       } catch (error) {
@@ -149,7 +149,7 @@ const FormCadastro = () => {
     try {
       // Primeira solicitação para realizar o cadastro
       const response = await axios.post(
-        "https://191.184.72.124:8800/Register",
+        "/api/Register",
         userDataUpper
       );
       const { token, message, userId } = response.data;
@@ -184,10 +184,10 @@ const FormCadastro = () => {
       const { email } = userData;
 
       // Chama a rota de envio de e-mail
-      await axios.post("https://191.184.72.124:8800/mail", {
+      await axios.post("/api/mail", {
         to: email,
         subject: "Processo de Exame ASO",
-        text: "Seja bem-vindo colaborador, acesse https://191.184.72.124:3000/loginUser e faça o login com seu nome completo e CPF para continuar seu processo de exame.",
+        text: "Seja bem-vindo colaborador, acesse https://flexit.site/loginUser e faça o login com seu nome completo e CPF para continuar seu processo de exame.",
       });
 
       // Redireciona para MyAccount

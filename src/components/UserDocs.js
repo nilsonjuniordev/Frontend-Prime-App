@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Box } from '@mui/material';
+import Button from '@mui/material/Button';
 
 const UserDocs = () => {
   const [userData, setUserData] = useState({
@@ -20,16 +22,26 @@ const UserDocs = () => {
     dependentes: "",
     data_nascimento: "",
   });
-
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [deleteError, setDeleteError] = useState(null);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-  const openLightbox = (index) => {
+  const uploadsPathImages = userData.uploadsPath ? userData.uploadsPath.split(", ") : [];
+  const uploadsPathAsoImages = userData.uploadsPathAso ? userData.uploadsPathAso.split(", ") : [];
+  
+
+
+  const openLightboxPath = (index) => {
     setLightboxOpen(true);
     setSelectedImageIndex(index);
   };
+  
+  const openLightboxPathAso = (index) => {
+    setLightboxOpen(true);
+    setSelectedImageIndex(index + (userData.uploadsPath ? userData.uploadsPath.split(", ").length : 0));
+  };
+  
 
   useEffect(() => {
     // Carregar dados do usuário ao montar o componente
@@ -37,7 +49,7 @@ const UserDocs = () => {
 
     const fetchUserData = async () => {
       try {
-        const response = await axios.get(`https://191.184.72.124:8800/${userId}`);
+        const response = await axios.get(`/api/${userId}`);
         setUserData(response.data);
       } catch (error) {
         console.error("Erro ao obter dados do usuário:", error);
@@ -52,15 +64,16 @@ const UserDocs = () => {
 
     if (confirmed) {
       try {
-        // Exclui todos os caminhos associados ao campo uploadsPath
+        // Exclui todos os caminhos associados aos campos uploadsPath e uploadsPathAso
         const userId = localStorage.getItem("userId");
-        await axios.delete(`https://191.184.72.124:8800/uploads/${userId}`);
+        await axios.delete(`/api/uploads/${userId}`);
+        await axios.delete(`/api/uploadsAso/${userId}`);
 
         // Recarrega a página para atualizar os dados do usuário
         window.location.reload();
 
         // Atualiza os dados do usuário após a exclusão
-        const response = await axios.get(`https://191.184.72.124:8800/${userId}`);
+        const response = await axios.get(`/api/${userId}`);
         setUserData(response.data);
         console.log("Caminhos das imagens removidos com sucesso.");
       } catch (error) {
@@ -74,78 +87,94 @@ const UserDocs = () => {
   };
 
   return (
-    <div className="UserData">
-      <h2>Meus Documentos</h2>
-      <p>
-        Gerencie seus documentos enviados. Se necessário, você pode excluí-los
-        todos e reenviá-los individualmente conforme solicitado.
-      </p>
-      {userData.uploadsPath && userData.uploadsPath.trim() !== "" ? (
-        <div>
-          <div className="ImageGallery">
-            {userData.uploadsPath.split(", ").map((path, index) => (
-              <div
-                key={index}
-                className="ImageGalleryItem"
-                onClick={() => openLightbox(index)}
-              >
-                <img
-                  src={`https://191.184.72.124:8800/${path.trim()}`}
-                  alt={`Imagem ${index}`}
-                />
-              </div>
-            ))}
-            {lightboxOpen && (
-              <div className="Lightbox">
-                <span
-                  className="CloseButton"
-                  onClick={() => setLightboxOpen(false)}
-                >
-                  Fechar
-                </span>
-                <img
-                  src={`https://191.184.72.124:8800/${userData.uploadsPath
-                    .split(", ")
-                    [selectedImageIndex].trim()}`}
-                  alt={`Imagem ${selectedImageIndex}`}
-                />
-              </div>
-            )}
-          </div>
-          <button className="btnD" onClick={() => setShowConfirmation(true)}>
-            Excluir Documentos
-          </button>
-        </div>
-      ) : (
-<p className="alertRed">Você ainda não enviou seus documentos. Favor enviar os documentos solicitados em "Enviar documentos".</p>
+    <Box display="flex" justifyContent="center" alignItems="center">
+      <Box sx={{ width: '100%', p: 3, typography: 'body1' }}>
+        <h2>Meus Documentos</h2>
+        <p>
+          Gerencie seus documentos enviados. Se necessário, você pode excluí-los
+          todos e reenviá-los individualmente conforme solicitado.
+        </p>
+        {(userData.uploadsPath || userData.uploadsPathAso) && (
+          <div>
+            <div className="ImageGallery">
+            {userData.uploadsPath && userData.uploadsPath.split(", ").map((path, index) => (
+  <div
+    key={index}
+    className="ImageGalleryItem"
+    onClick={() => openLightboxPath(index)}
+  >
+    <img
+      src={`/api/${path.trim()}`}
+      alt={`Imagem ${index}`}
+    />
+  </div>
+))}
 
-      )}
-  
-      {showConfirmation && (
-        <div>
-          <p className="alertRed">
-            Ao realizar a exclusão, será necessário reenviar todos os documentos
-            novamente. <br/>Tem certeza que deseja excluir todos os documentos?
-          </p>
-          <button
-            className="btnD"
-            onClick={() => handleDeleteConfirmation(true)}
-          >
-            Sim
-          </button>
-          <button
-            className="btnD"
-            onClick={() => handleDeleteConfirmation(false)}
-          >
-            Não
-          </button>
-        </div>
-      )}
-      {deleteError && <p>{deleteError}</p>}
-    </div>
+{userData.uploadsPathAso && userData.uploadsPathAso.split(", ").map((path, index) => (
+  <div
+    key={index}
+    className="ImageGalleryItem"
+    onClick={() => openLightboxPathAso(index)}
+  >
+    <img
+      src={`/api/${path.trim()}`}
+      alt={`Imagem ${index}`}
+    />
+  </div>
+))}
+
+{lightboxOpen && (
+  <div className="Lightbox">
+    <span
+      className="CloseButton"
+      onClick={() => setLightboxOpen(false)}
+    >
+      Fechar
+    </span>
+    <img
+      src={`/api/${
+        selectedImageIndex < uploadsPathImages.length
+          ? uploadsPathImages[selectedImageIndex].trim()
+          : uploadsPathAsoImages[selectedImageIndex - uploadsPathImages.length].trim()
+      }`}
+      alt={`Imagem ${selectedImageIndex}`}
+    />
+  </div>
+)}
+
+            </div>
+            <Button   variant="contained" onClick={() => setShowConfirmation(true)} style={{ backgroundColor: '#633687', color: 'white' }}>
+              Excluir Documentos
+            </Button>
+          </div>   
+        )}
+        {!userData.uploadsPath && !userData.uploadsPathAso && (
+          <p className="alertRed">Você ainda não enviou seus documentos. Favor enviar os documentos solicitados em "Enviar documentos".</p>
+        )}
+        {showConfirmation && (
+          <div>
+            <p className="alertRed">
+              Ao realizar a exclusão, será necessário reenviar todos os documentos
+              novamente. <br/>Tem certeza que deseja excluir todos os documentos?
+            </p>
+            <Button style={{ backgroundColor: '#633687', color: 'white', margin: '5px' }}
+              onClick={() => handleDeleteConfirmation(true)}
+            >
+              Sim
+            </Button>
+
+            <Button style={{ backgroundColor: '#633687', color: 'white', margin: '5px' }}
+              className="btnD"
+              onClick={() => handleDeleteConfirmation(false)}
+            >
+              Não
+            </Button>
+          </div>
+        )}
+        {deleteError && <p>{deleteError}</p>}
+      </Box>
+    </Box>
   );
-  
-  
 };
 
 export default UserDocs;

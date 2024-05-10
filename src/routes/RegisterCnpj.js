@@ -30,8 +30,11 @@ function RegisterCnpj() {
          <Link to="/LoginRh" className="voltar">
           <p>Voltar</p> 
         </Link>
+
+        <img className='navLogo' src="/assets/iboard-logo-sfundo.png" alt='' />
         <br/>
-        <h1  style={{ color: '#fff' , textAlign: 'center'}}> Cadastro Recrutador Prime TXT</h1>
+        
+        <h1  style={{ color: '#fff' , textAlign: 'center'}}> Cadastro Recrutador Iboard</h1>
         <p style={{ color: '#fff', textAlign: 'center'}}>Preencha cada campo do formulário com suas informações pessoais atualizadas. </p> <br/>
         <FormCadastroRh onEdit={onEdit} setOnEdit={setOnEdit} getUsers={getUsers} users={users} />
      

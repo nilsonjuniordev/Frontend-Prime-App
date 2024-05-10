@@ -1,26 +1,34 @@
-import GlobalStyle from "../styles/global";
+
 import UploadAso from "../components/UploadAso";
 import SideBarUser from "../components/SideBarUser";
-import NavBar from "../components/NavBar";
-const UploadExame = () => (
+
+import Box from '@mui/material/Box';
+import { useTheme } from '@mui/material';
+
+const UploadExame = () => {
+
+  const theme = useTheme();
+
+return(
+
 <>
-  <SideBarUser />
-
-      <div className="ContainerApp70">
-      <NavBar />
-
-        <div className="ContentApp">
-      <br />
-      <h2>
-        Tire fotos nítidas de seu examo realizado, garanta que todas as informações estejam legiveis.<br />
-     
-      </h2>
+<SideBarUser /> 
+      <Box
+        component="main"
+        sx={{
+          marginTop: 10, // Margem para o AppBar
+          [theme.breakpoints.down('sm')]: {
+            marginTop: 4, // Reduz a margem para dispositivos móveis
+          },
+        }}
+      >   
+    
 
       <UploadAso />
-    </div></div>
-
-    <GlobalStyle />
+      </Box>
+   
   </>
 );
+};
 
 export default UploadExame;

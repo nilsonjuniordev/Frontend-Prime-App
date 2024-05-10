@@ -24,7 +24,7 @@ const LoginCnpj = () => {
 
 
     try {
-      const response = await axios.post('https://191.184.72.124:8800/loginCnpj', {
+      const response = await axios.post('/api/loginCnpj', {
         nome,
         pass,
       });
@@ -53,6 +53,9 @@ const LoginCnpj = () => {
       <Link to="/LoginRh" className="voltar">
           <p>Voltar</p> 
         </Link>
+
+        <img className='navLogo' src="/assets/iboard-logo-sfundo.png" alt='' />
+        <br/>
 
 <h1 style={{ color: '#fff' , textAlign: 'center'}}>Área do recrutador</h1><br/>
       <p  style={{ color: '#fff' , textAlign: 'center'}}>

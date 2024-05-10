@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {useNavigate } from "react-router-dom";
+import { Box, Typography } from "@mui/material";
+import Button from '@mui/material/Button';
 
 const UploadAso = () => {
   const navigate = useNavigate();
@@ -39,7 +41,7 @@ const UploadAso = () => {
 
     try {
       const response = await axios.post(
-        "https://191.184.72.124:8800/uploads/aso",
+        "/api/uploads/aso",
         formData,
         {
           headers: {
@@ -70,18 +72,22 @@ const UploadAso = () => {
   };
 
   return (
-    <div>
-      {" "}
-      <div className="DocUpdate">
+    <Box display="flex" justifyContent="center" alignItems="center">
+    <Box sx={{ width: '100%', p: 3 }}>
+   <Typography> <h2>
+        Tire fotos nítidas de seu examo realizado, garanta que todas as informações estejam legiveis.<br />
+     
+      </h2></Typography>
+
         <label htmlFor="fileInput" className="custom-file-upload">
           <input
             type="file"
             id="fileInput"
             multiple
             onChange={handleFileChange}
-          />   Clique aqui e selecione o documento em seu celular ou computador:
+          />  <Typography> Clique aqui e selecione o documento em seu celular ou computador:</Typography>
           <br />
-          <br />
+        
         </label>
         <div className="image-preview">
           {files.map((file, index) => (
@@ -89,12 +95,12 @@ const UploadAso = () => {
           ))}
         </div>
         {uploadMessage && <p>{uploadMessage}</p>}
+       <Button  variant="contained" onClick={handleUpload} style={{ backgroundColor: '#633687', color: 'white' }}>
+      
      
-        <button className="EnvUpdate" onClick={handleUpload}>
           Enviar Imagens
-        </button>
-      </div>
-    </div>
+        </Button>
+    </Box></Box>
   );
 };
 

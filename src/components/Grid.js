@@ -109,7 +109,7 @@ const Grid = ({ users, setUsers }) => {
 
   const handleDelete = async (id) => {
     await axios
-      .delete("https://191.184.72.124:8800/" + id)
+      .delete("/api/" + id)
       .then(({ data }) => {
         const newArray = users.filter((user) => user.iduser !== id);
 
@@ -122,7 +122,7 @@ const Grid = ({ users, setUsers }) => {
   const handleSave = async () => {
     try {
       const { iduser, ...userData } = editingUser;
-      await axios.put(`https://191.184.72.124:8800/${iduser}`, userData);
+      await axios.put(`/api/${iduser}`, userData);
       toast.success("Dados do usuário atualizados com sucesso.");
       closeModal();
     } catch (error) {
@@ -198,7 +198,7 @@ const Grid = ({ users, setUsers }) => {
     {editingUser.uploadsPath.split(", ").map((path, index) => (
       <div key={index} className="ImageGalleryItem" onClick={() => openLightbox(index)}>
         <img
-          src={`https://191.184.72.124:8800/${path.trim()}`}
+          src={`/api/${path.trim()}`}
           alt={`Imagem ${index}`}
         />
       </div>
@@ -211,7 +211,7 @@ const Grid = ({ users, setUsers }) => {
     <LightboxContent>
       <CloseButton onClick={closeLightbox}>Fechar</CloseButton>
       <img
-        src={`https://191.184.72.124:8800/${editingUser.uploadsPath.split(", ")[selectedImageIndex].trim()}`}
+        src={`/api/${editingUser.uploadsPath.split(", ")[selectedImageIndex].trim()}`}
         alt={`Imagem ${selectedImageIndex}`}
       />
     </LightboxContent>

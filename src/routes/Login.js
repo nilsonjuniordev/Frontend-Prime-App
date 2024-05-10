@@ -28,7 +28,7 @@ const Login = () => {
     e.preventDefault();
   
     try {
-      const response = await axios.post('https://191.184.72.124:8800/login', {
+      const response = await axios.post('/api/login', {
         nome,
         cpf,
       });
@@ -65,7 +65,8 @@ const Login = () => {
       <Link to="/LoginUser" className="voltar">
           <p>Voltar</p> 
         </Link>
-
+        <img className='navLogo' src="/assets/iboard-logo-sfundo.png" alt='' />
+        <br/>
       <p style={{ color: '#fff' , textAlign: 'center'}}>
         Utilize o nome completo e CPF <br />cadastrados para acessar sua conta.
       </p><br />

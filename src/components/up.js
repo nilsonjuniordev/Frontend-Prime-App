@@ -55,7 +55,7 @@ const UploadDocuments = () => {
         console.log(pair[0]+ ', ' + pair[1]); 
       }
   
-      const response = await axios.post('https://191.184.72.124:8800/uploads', formData, {
+      const response = await axios.post('/api/uploads', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           'UserId': userId, // Envie o userId no cabeçalho

@@ -6,12 +6,14 @@ const Home = () => (
   
     <div className='ContainerDefaultH'>
       <div className="textCenter">
+      <img className='navLogo' src="/assets/iboard-logo-sfundo.png" alt='' />
+<br/><br/><br/>
       <div className="ContentApp">
 
-      <h2>Bem-vindo a Prime TXT! </h2>
+      <h2>Bem-vindo</h2>
 
       <p>
-      Aqui na Prime , buscamos proporcionar uma experiência excepcional, seja na busca por talentos ou no desenvolvimento de carreiras.
+      Aqui na Iboard , buscamos proporcionar uma experiência excepcional, seja na busca por talentos ou no desenvolvimento de carreiras.
         </p>
    
         <p><br/>

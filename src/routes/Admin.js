@@ -13,7 +13,7 @@ const Admin = () => {
     const userId = localStorage.getItem("userId");
 
 
-    fetch(`https://191.184.72.124:8800/${userId}`)
+    fetch(`/api/${userId}`)
       .then((response) => response.json())
       .then((data) => {
       

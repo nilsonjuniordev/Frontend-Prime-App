@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import InputMask from "react-input-mask";
+import { Box } from "@mui/material";
 
 const FormRh = () => {
   const [numeroTelefone, setNumeroTelefone] = useState("");
@@ -20,7 +21,7 @@ const FormRh = () => {
     const fetchUserData = async () => {
       try {
         const userId = localStorage.getItem("userId");
-        const response = await axios.get(`https://191.184.72.124:8800/${userId}`);
+        const response = await axios.get(`/api/${userId}`);
         const userDataFromApi = response.data;
         setUserData((prevUserData) => ({
           ...prevUserData,
@@ -72,7 +73,7 @@ const FormRh = () => {
 
     try {
       const docsString = documentosSelecionados.join(",");
-      const response = await axios.post("https://191.184.72.124:8800/register", {
+      const response = await axios.post("/api/register", {
         ...userDataUpperCase, // Enviar os dados em maiúsculas
         docs: docsString,
       });
@@ -95,10 +96,10 @@ const FormRh = () => {
       const { email } = userData;
 
       // Chama a rota de envio de e-mail
-      await axios.post("https://191.184.72.124:8800/mail", {
+      await axios.post("/api/mail", {
         to: email,
         subject: "Processo de Exame ASO",
-        text: "Seja bem-vindo colaborador, acesse https://191.184.72.124:3000/loginUser e faça o login com seu nome completo e CPF para continuar seu processo de exame.",
+        text: "Seja bem-vindo colaborador, acesse https://flexit.site/loginUser e faça o login com seu nome completo e CPF para continuar seu processo de exame.",
       });
     } catch (error) {
       console.error("Erro no handleSubmit:", error);
@@ -110,7 +111,7 @@ const FormRh = () => {
 
   
   return (
-    <>
+<Box>
       <form onSubmit={handleSubmit}>
       <div className="FormRh">  <div >
         <label>Nome completo:</label>
@@ -356,7 +357,7 @@ const FormRh = () => {
       <button className="btn100" type="submit">
       Adicionar Colaborador
       </button> </form>
-    </>
+      </Box>
   );
 };
 

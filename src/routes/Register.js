@@ -31,7 +31,9 @@ function Register() {
           <p>Voltar</p> 
         </Link>
         <br/>
-        <h1  style={{ color: '#fff'}}> Cadastro Prime TXT</h1>
+        <img className='navLogo' src="/assets/iboard-logo-sfundo.png" alt='' />
+        <br/>
+        <h1  style={{ color: '#fff'}}> Cadastro Iboard</h1>
         <p style={{ color: '#fff'}}>Preencha cada campo do formulário com suas informações pessoais atualizadas. </p> <br/>
         <FormCadastro onEdit={onEdit} setOnEdit={setOnEdit} getUsers={getUsers} users={users} />
      

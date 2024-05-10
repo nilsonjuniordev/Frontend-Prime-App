@@ -1,15 +1,18 @@
 import React from 'react';
-
+import { Box, useTheme} from '@mui/material';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const themeContext = useTheme();
+
+
   return (
-    <div className="ContainerFooter">
-   
+    <Box  sx={{ backgroundColor: themeContext.palette.footer?.main }} >
+      
       <p>&copy; Prime TXT {currentYear} - Todos os direitos reservados</p>
   
-    </div>
+    </Box>
   );
 }
 

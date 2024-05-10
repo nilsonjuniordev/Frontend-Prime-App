@@ -3,6 +3,8 @@ import axios from "axios";
 import InputMask from "react-input-mask";
 import { toast } from "react-toastify";
 import { useNavigate } from 'react-router-dom';
+import { Box, Typography } from "@mui/material";
+import Button from '@mui/material/Button';
 
 const UserData = () => {
   const navigate = useNavigate();
@@ -73,7 +75,7 @@ const handleCEPBlur = () => {
         const userId = localStorage.getItem("userId");
 
         if (userId) {
-          const response = await axios.get(`https://191.184.72.124:8800/${userId}`);
+          const response = await axios.get(`/api/${userId}`);
           setUserData(response.data);
         }
       } catch (error) {
@@ -102,8 +104,8 @@ const handleCEPBlur = () => {
   
     try {
       const userId = localStorage.getItem('userId');
-      await axios.put(`https://191.184.72.124:8800/${userId}`, userDataCopy);
-      setUpdateSuccessMessage(<div className='alertGreen'>Dados do usuário atualizados com sucesso.</div>);
+      await axios.put(`/api/${userId}`, userDataCopy);
+      setUpdateSuccessMessage(<div className='alertGreen'><Typography>Dados do usuário atualizados com sucesso.</Typography></div>);
       console.log('Dados do usuário atualizados com sucesso.');
       
       setTimeout(() =>{
@@ -130,7 +132,7 @@ const handleCEPBlur = () => {
 
     const fetchUserData = async () => {
       try {
-        const response = await axios.get(`https://191.184.72.124:8800/${userId}`);
+        const response = await axios.get(`/api/${userId}`);
         setUserData(response.data);
       } catch (error) {
         console.error('Erro ao obter dados do usuário:', error);
@@ -143,20 +145,22 @@ const handleCEPBlur = () => {
 
 
   return (
-    <div className="UserData">
+    <Box display="flex" justifyContent="center" alignItems="left" flexDirection="column" >
+     <Typography sx={ {padding: 2}}>  
+      
       <h2>Meu cadastro</h2>
-      <p>
+   
         Para atualizar suas informações cadastradas, basta editar os campos
         conforme desejado e, em seguida, clicar no botão 'Salvar'.
-      </p>
+    </Typography>
       <br />
       {loading && <p>Carregando dados do usuário...</p>}
       {error && <p>{error}</p>}
       {!loading && !error && (
-        <div>
+        <Box>
           <form className="UserDataForm" onSubmit={handleFormSubmit}>
           <label>
-              Nome:
+          <Typography> Nome:</Typography>
               <input
                 type="text"
                 name="nome"
@@ -166,7 +170,7 @@ const handleCEPBlur = () => {
             </label>
 
             <label>
-              Email:
+            <Typography> Email:   </Typography>
               <input
                 type="text"
                 name="email"
@@ -176,7 +180,7 @@ const handleCEPBlur = () => {
             </label>
 
             <label>
-              Telefone:
+            <Typography>  Telefone:   </Typography>
               <InputMask
                 mask="(99) 99999-9999"
                 type="text"
@@ -187,7 +191,7 @@ const handleCEPBlur = () => {
             </label>
 
             <label>
-              CPF:
+             <Typography>  CPF:  </Typography>
               <InputMask
                 mask="999.999.999-99"
                 type="text"
@@ -198,7 +202,7 @@ const handleCEPBlur = () => {
             </label>
 
             <label>
-              RG:
+            <Typography> RG:   </Typography>
               <InputMask
     mask="99.999.999-9"
     placeholder="Digite o RG"
@@ -209,7 +213,7 @@ const handleCEPBlur = () => {
             </label>
 
             <label>
-              CEP:
+            <Typography> CEP:  </Typography>
               <input
     name="cep"
     type="text"
@@ -221,7 +225,7 @@ const handleCEPBlur = () => {
             </label>
 
             <label>
-              Rua:
+             <Typography> Rua:   </Typography>
               <input
                 type="text"
                 name="rua"
@@ -231,7 +235,7 @@ const handleCEPBlur = () => {
             </label>
 
             <label>
-              Número:
+             <Typography>  Número:  </Typography>
               <input
                 type="text"
                 name="numero"
@@ -241,7 +245,7 @@ const handleCEPBlur = () => {
             </label>
 
             <label>
-              Complemento:
+             <Typography>  Complemento:  </Typography>
               <input
                 type="text"
                 name="complemento"
@@ -251,7 +255,7 @@ const handleCEPBlur = () => {
             </label>
 
             <label>
-              Cidade:
+            <Typography>  Cidade:   </Typography>
               <input
                 type="text"
                 name="cidade"
@@ -261,7 +265,7 @@ const handleCEPBlur = () => {
             </label>
 
             <label>
-              Estado:
+             <Typography>  Estado:</Typography>
               <input
                 type="text"
                 name="estado"
@@ -271,7 +275,7 @@ const handleCEPBlur = () => {
             </label>
 
       
-        <label>Estado Civil
+        <label><Typography>Estado Civil</Typography>
         <select
           name="civil"
           value={userData.civil}
@@ -285,7 +289,7 @@ const handleCEPBlur = () => {
         </select></label>
      
 
-        <label>Gênero
+        <label><Typography>Gênero</Typography>
         <select
           name="genero"
           value={userData.genero}
@@ -298,7 +302,7 @@ const handleCEPBlur = () => {
         </select></label>
 
             <label>
-              Dependentes:
+            <Typography>  Dependentes: </Typography>
               <input
                 type="text"
                 name="dependentes"
@@ -308,7 +312,7 @@ const handleCEPBlur = () => {
             </label>
 
             <label>
-              Data de Nascimento:
+             <Typography> Data de Nascimento: </Typography>
               <InputMask
                 mask="99/99/9999"
                 type="text"
@@ -318,7 +322,8 @@ const handleCEPBlur = () => {
               />
             </label>
 
-            <button type="submit">Salvar</button>
+            <Button type="submit" variant="contained" style={{ backgroundColor: '#633687', color: 'white' }}>Salvar</Button>
+         
           </form>
            {/* Adiciona uma mensagem de sucesso após a atualização */}
            {updateSuccessMessage && (
@@ -327,7 +332,7 @@ const handleCEPBlur = () => {
 
           {userData.uploadsPath && userData.uploadsPath.trim() !== "" && (
             <div>
-{fieldsRequiredError && <p className="alertRed">Todos os campos são obrigatórios.</p>}
+{fieldsRequiredError && <Typography><p className="alertRed">Todos os campos são obrigatórios.</p></Typography>}
 
 
             
@@ -336,9 +341,9 @@ const handleCEPBlur = () => {
 
             </div>
           )}
-        </div>
+        </Box>
       )}
-    </div>
+    </Box>
   );
 };
 

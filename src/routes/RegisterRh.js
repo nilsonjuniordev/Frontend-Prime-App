@@ -5,10 +5,13 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import SideBarRh from "../components/SideBarRh.js";
-import NavBar from "../components/NavBar.js";
+import { Box } from "@mui/material";
+import { useTheme } from '@mui/material';
+
 function RegisterRH() {
   const [users, setUsers] = useState([]);
   const [onEdit, setOnEdit] = useState(null);
+  const theme = useTheme();
 
   const getUsers = async () => {
     try {
@@ -26,11 +29,17 @@ function RegisterRH() {
   return (
     <>
       
-        <SideBarRh />
+      <SideBarRh /> 
+      <Box
+        component="main"
+        sx={{
+          marginTop: 7, p: 3, // Margem para o AppBar
+          [theme.breakpoints.down('sm')]: {
+            marginTop: 7, // Reduz a margem para dispositivos móveis
+          },
+        }}
+      >
 
-        <div className="ContainerApp70">
-        <NavBar />
-        <div className="ContentApp">
           <h3>Adicionar colaborador</h3>
           <p>
             Para iniciar o processo, cadastre um novo colaborador. Em seguida,
@@ -50,7 +59,8 @@ function RegisterRH() {
             position={toast.POSITION.BOTTOM_LEFT}
           />
           <GlobalStyle />
-        </div></div>
+        
+      </Box>
      
     </>
   );

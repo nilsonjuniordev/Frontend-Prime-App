@@ -17,7 +17,7 @@ const Dashboard = () => {
     const fetchUserData = async () => {
       try {
         const userId = localStorage.getItem("userId");
-        const response = await axios.get(`https://191.184.72.124:8800/${userId}`);
+        const response = await axios.get(`/api/${userId}`);
         const userDataFromApi = response.data;
         setCurrentUserCnpj(userDataFromApi.id_cnpj);
       } catch (error) {
@@ -32,11 +32,11 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const userId = localStorage.getItem("userId");
-        const userResponse = await axios.get(`https://191.184.72.124:8800/${userId}`);
+        const userResponse = await axios.get(`/api/${userId}`);
         const userDataFromApi = userResponse.data;
         setCurrentUserCnpj(userDataFromApi.id_cnpj);
     
-        const usersResponse = await axios.get("https://191.184.72.124:8800/");
+        const usersResponse = await axios.get("/api/");
         const users = usersResponse.data.filter(user => !user.cnpj); // Filtrar apenas usuários sem cnpj
     
         const dailyCounts = {};

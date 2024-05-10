@@ -1,22 +1,26 @@
 // MyData.js
 import React from 'react';
 import UserDocs from '../components/UserDocs';
-import NavBar from '../components/NavBar';
 import SideBarUser from '../components/SideBarUser';
-
+import { Box } from '@mui/material';
+import { useTheme } from '@mui/material';
 const MyDocs = ({ userId }) => {
-
+  const theme = useTheme();
   return (
     <>
-   
-  <SideBarUser />
-
-
-      <div className="ContainerApp70">
-      <NavBar />
-      <div className="ContentApp">
+   <SideBarUser /> 
+      <Box
+        component="main"
+        sx={{
+          marginTop: 10, // Margem para o AppBar
+          [theme.breakpoints.down('sm')]: {
+            marginTop: 10, // Reduz a margem para dispositivos móveis
+          },
+        }}
+      >
+    
       <UserDocs iduser={userId} />
-    </div></div></>
+      </Box></>
     
   );
 };

@@ -1,29 +1,32 @@
-import GlobalStyle from "../styles/global";
 import UploadDocuments from "../components/UploadDocuments";
 import SideBarUser from "../components/SideBarUser";
-import NavBar from "../components/NavBar";
-const Upload = () => (
+import Box from '@mui/material/Box';
+import { useTheme } from '@mui/material';
+
+
+const Upload = () => {
+  const theme = useTheme();
+  return (
+
   <>
-  <SideBarUser />
+  <SideBarUser /> 
+      <Box
+        component="main"
+        sx={{
+          marginTop: 10, // Margem para o AppBar
+          [theme.breakpoints.down('sm')]: {
+            marginTop: 4, // Reduz a margem para dispositivos móveis
+          },
+        }}
+      >   
 
 
-      <div className="ContainerApp70">
-      <NavBar />
-
-        <div className="ContentApp">
-      <br />
-      <h2>
-        Tire fotos nítidas, tanto da frente quanto do verso, de cada um dos
-        documentos solicitados e certifique-se de anexar todos eles.
-        <br />
-     
-      </h2>
-
-      <UploadDocuments />
-    </div> </div>
-
-    <GlobalStyle />
+      <UploadDocuments />    
+     </Box>
   </>
-);
+ );
+
+};
+
 
 export default Upload;

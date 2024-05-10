@@ -53,7 +53,7 @@ const UserDataRh = () => {
       
     try {
       const userId = localStorage.getItem('userId');
-      await axios.put(`https://191.184.72.124:8800/${userId}`, userData);
+      await axios.put(`/api/${userId}`, userData);
       setUpdateSuccessMessage(<div className='alertGreen'>Dados do usuário atualizados com sucesso.</div>);
       console.log('Dados do usuário atualizados com sucesso.');
     } catch (error) {
@@ -68,7 +68,7 @@ const UserDataRh = () => {
       try {
         const userId = localStorage.getItem("userId");
         if (userId) {
-          const response = await axios.get(`https://191.184.72.124:8800/${userId}`);
+          const response = await axios.get(`/api/${userId}`);
           setUserData(response.data);
         }
       } catch (error) {

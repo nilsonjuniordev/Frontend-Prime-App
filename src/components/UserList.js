@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import React, { useState } from "react";
 
 const UserList = ({ users, onSendMessage, currentUser }) => {
@@ -66,7 +67,7 @@ const UserList = ({ users, onSendMessage, currentUser }) => {
     : users;
 
   return (
-    <div className="ContainerDefault">
+    <Box>
       <div className="LabelList">
         <div className="ListFlex">
           <div className="IdList">ID</div>
@@ -83,7 +84,7 @@ const UserList = ({ users, onSendMessage, currentUser }) => {
         <div className="ListFlex" key={user.id}>
           <div className="IdList">{user.iduser}</div>
           <div className="ListGrid">{user.nome}</div>
-          <div className="ListGrid">{user.email}</div>
+          <div className="ListGridMail">{user.email}</div>
           <div className="ListGrid">
             <a
               href={`whatsapp://send?phone=55${user.fone.replace(/\D/g, "")}`}
@@ -130,21 +131,21 @@ const UserList = ({ users, onSendMessage, currentUser }) => {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <span className="close" onClick={closeModal}>X</span>
             <h2>Informações pessoais do colaborador</h2>
-            <p>ID: {selectedUser.iduser}</p>
-            <p>Nome: {selectedUser.nome}</p>
-            <p>CPF: {selectedUser.cpf}</p>
-            <p>RG: {selectedUser.rg}</p>
-            <p>Gênero: {selectedUser.genero}</p>
-            <p>Dependentes: {selectedUser.dependentes}</p>
-            <p>Data de nascimento: {selectedUser.data_nascimento}</p>
-            <p>Data de início de processo: {selectedUser.data}</p>
-            <p>E-mail: {selectedUser.email}</p>
-            <h2>Endereço</h2>
-            <p>Rua: {selectedUser.rua}</p>
-            <p>Número: {selectedUser.numero}</p>
-            <p>Complemento: {selectedUser.complemento}</p>
-            <p>Cidade: {selectedUser.cidade}</p>
-            <p>Estado: {selectedUser.estado}</p>
+            <p>ID:<b> {selectedUser.iduser}</b></p>
+            <p>Nome: <b> {selectedUser.nome}</b></p>
+            <p>CPF: <b> {selectedUser.cpf}</b></p>
+            <p>RG: <b> {selectedUser.rg}</b></p>
+            <p>Gênero: <b> {selectedUser.genero}</b></p>
+            <p>Dependentes: <b> {selectedUser.dependentes}</b></p>
+            <p>Data de nascimento: <b> {selectedUser.data_nascimento}</b></p>
+            <p>Data de início de processo: <b> {selectedUser.data}</b></p>
+            <p>E-mail: <b> {selectedUser.email}</b></p>
+            <h2><b> Endereço</b> </h2>
+            <p>Rua: <b> {selectedUser.rua}</b></p>
+            <p>Número: <b> {selectedUser.numero}</b></p>
+            <p>Complemento: <b> {selectedUser.complemento}</b></p>
+            <p>Cidade: <b> {selectedUser.cidade}</b></p>
+            <p>Estado:<b>  {selectedUser.estado}</b></p>
           </div>
         </div>
       )}
@@ -161,7 +162,7 @@ const UserList = ({ users, onSendMessage, currentUser }) => {
                   key={index}
                   onClick={() => openLightbox(index)}
                   className="ImageGalleryItem"
-                  src={`https://191.184.72.124:8800/${path.trim()}`}
+                  src={`/api/${path.trim()}`}
                   alt={`Imagem ${index}`}
                 />
               ))}
@@ -175,11 +176,11 @@ const UserList = ({ users, onSendMessage, currentUser }) => {
         <div className="modal">
           <div className="modalOpenImage" onClick={(e) => e.stopPropagation()}>
             <span className="close" onClick={() => setLightboxOpen(false)}>X</span>
-            <img src={`https://191.184.72.124:8800/${userImages[selectedImageIndex]}`} alt={`Imagem Ampliada`} />
+            <img src={`/api/${userImages[selectedImageIndex]}`} alt={`Imagem Ampliada`} />
           </div>
         </div>
       )}
-    </div>
+    </Box>
   );
 };
 

@@ -132,7 +132,7 @@ const FormCadastroRh = () => {
       const idCnpj = `${uppercaseUserData.nome.replace(/\s/g, '')}-${Math.floor(Math.random() * 1000)}`;
       const userDataWithIdCnpj = { ...uppercaseUserData, id_cnpj: idCnpj };
   
-      const response = await axios.post("https://191.184.72.124:8800/RegisterRh", userDataWithIdCnpj);
+      const response = await axios.post("/api/RegisterRh", userDataWithIdCnpj);
       const { message, userId } = response.data;
       toast.success(message);
   
@@ -148,10 +148,10 @@ const FormCadastroRh = () => {
  const { email } = userData;
 
  // Chama a rota de envio de e-mail
- await axios.post("https://191.184.72.124:8800/mail", {
+ await axios.post("/api/mail", {
    to: email,
    subject: "Cadastro recrutador Prime TXT",
-   text: "Seja bem-vindo Recrutador, acesse https://191.184.72.124:3000/loginRh e faça o login com os acessos criados no cadastro",
+   text: "Seja bem-vindo Recrutador, acesse https://flexit.site/loginRh e faça o login com os acessos criados no cadastro",
  });
 
 

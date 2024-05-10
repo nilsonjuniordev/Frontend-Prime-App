@@ -10,7 +10,7 @@ const spinAnimation = keyframes`
 
 const Spinner = styled.div`
   border: 4px solid rgba(0, 0, 0, 0.1);
-  border-left-color: #1a73e8;
+  border-left-color: #9c2cf7;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -23,7 +23,7 @@ const LoadingOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(1, 1, 34, 0.9);
+  background-color: #633687;
   display: flex;
   justify-content: center;
   align-items: center;

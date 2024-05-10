@@ -146,7 +146,7 @@ console.log("campos", userData);
     try {
       if (onEdit) {
         await axios
-          .put(`https://191.184.72.124:8800/${onEdit.id}`, userData)
+          .put(`/api/${onEdit.id}`, userData)
           .then(({ data }) => toast.success(data))
           .catch(({ data }) => toast.error(data));
       } else {

@@ -1,13 +1,13 @@
-// src/routes/App.js
+// App.js
 import React, { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
-import GlobalStyle from '../styles/global';
-
-import Footer from '../components/Footer';
 import Loading from '../components/Loading';
-
+import { ThemeProvider } from '@mui/material/styles';
+import { lightTheme } from '../styles/theme';
+import { Box } from '@mui/material';
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  
 
   // Simulando um tempo de carregamento
   useEffect(() => {
@@ -19,15 +19,19 @@ function App() {
     return () => clearTimeout(timeout);
   }, []);
 
+ 
+
   return (
-    <>
-      <div className="ContainerApp">
-       
-        {isLoading ? <Loading /> : <Outlet />} 
-        <Footer />
-      </div>
-      <GlobalStyle />
-    </>
+    <ThemeProvider theme={lightTheme}>
+      <Box  sx={{typography: 'body1'}}>
+
+
+     
+ 
+        {isLoading ? <Loading /> : <Outlet />}
+ 
+     </Box>
+    </ThemeProvider>
   );
 }
 

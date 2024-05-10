@@ -24,7 +24,7 @@ const LoginAdm = () => {
 
 
     try {
-      const response = await axios.post('https://191.184.72.124:8800/loginCnpj', {
+      const response = await axios.post('/api/loginCnpj', {
         nome,
         pass,
       });

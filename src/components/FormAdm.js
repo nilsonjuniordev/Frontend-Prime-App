@@ -103,7 +103,7 @@ const FormAdm = () => {
 
     try {
       const docsString = documentosSelecionados.join(",");
-      const response = await axios.post("httpssssss://191.184.72.124:8800/register", {
+      const response = await axios.post("api/register", {
         ...userDataUpperCase, // Enviar os dados em maiúsculas
         id_cnpj: selectedEmpresa, // Incluir o id_cnpj da empresa selecionada
         docs: docsString,
@@ -125,10 +125,10 @@ const FormAdm = () => {
  const { email } = userData;
 
  // Chama a rota de envio de e-mail
- await axios.post("httpssssss://191.184.72.124:8800/mail", {
+ await axios.post("api/mail", {
    to: email,
    subject: "Processo de Exame ASO",
-   text: "Seja bem-vindo colaborador, acesse httpssssss://191.184.72.124:3000/loginUser e faça o login com seu nome completo e CPF para continuar seu processo de exame.",
+   text: "Seja bem-vindo colaborador, acesse https://flexit.site/loginUser e faça o login com seu nome completo e CPF para continuar seu processo de exame.",
  });
 
       setNumeroTelefone("");

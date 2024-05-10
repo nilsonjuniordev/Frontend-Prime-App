@@ -13,7 +13,7 @@ const DashBoardAdm = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://191.184.72.124:8800/");
+        const response = await axios.get("/api/");
         const users = response.data;
 
         const dailyCounts = {};

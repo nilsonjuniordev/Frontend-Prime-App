@@ -186,7 +186,7 @@ const UserListAdm = ({ users, onSendMessage, onDeleteUser, currentUser }) => {
                   key={index}
                   onClick={() => openLightbox(index)}
                   className="ImageGalleryItem"
-                  src={`https://191.184.72.124:8800/${path.trim()}`}
+                  src={`/api/${path.trim()}`}
                   alt={`Imagem ${index}`}
                 />
               ))}
@@ -200,7 +200,7 @@ const UserListAdm = ({ users, onSendMessage, onDeleteUser, currentUser }) => {
         <div className="modal">
           <div className="modalOpenImage" onClick={(e) => e.stopPropagation()}>
             <span className="close" onClick={() => setLightboxOpen(false)}>X</span>
-            <img src={`https://191.184.72.124:8800/${userImages[selectedImageIndex]}`} alt={`Imagem Ampliada`} />
+            <img src={`/api/${userImages[selectedImageIndex]}`} alt={`Imagem Ampliada`} />
           </div>
         </div>
       )}

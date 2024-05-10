@@ -2,18 +2,21 @@ import React, { useEffect, useState } from "react";
 import SideBarRh from "../components/SideBarRh";
 import "../styles/styles.css";
 import Dashboard from "../components/DashBoard";
-import NavBar from '../components/NavBar';
+import { useTheme } from '@mui/material';
+import { Box } from "@mui/material";
 
 const AdminRh = () => {
 
  
   const [userName, setUserName] = useState("");
 
+  const theme = useTheme();
+
   useEffect(() => {
     const userId = localStorage.getItem("userId");
 
 
-    fetch(`https://191.184.72.124:8800/${userId}`)
+    fetch(`/api/${userId}`)
       .then((response) => response.json())
       .then((data) => {
       
@@ -31,8 +34,16 @@ const AdminRh = () => {
   return (  
       <>
    <SideBarRh />
-  <div className="ContainerApp70">    
-    <NavBar />
+   <Box
+        component="main"
+        sx={{
+          marginTop: 15, // Margem para o AppBar
+          [theme.breakpoints.down('sm')]: {
+            marginTop: 10, // Reduz a margem para dispositivos m√≥veis
+          },
+        }}
+      >  
+
     <div className="ContentApp">
       <div><h3><b>Bem vindo, {userName || "visitante"}</b></h3>
       <p>
@@ -40,7 +51,7 @@ Adicione novos colaboradores, acompanhe o status de cada etapa do processo e fa√
           
 <Dashboard />
         
-    </div></div>
+    </div></Box>
 
     </>
   );
